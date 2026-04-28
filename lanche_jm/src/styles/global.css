@@ -1,0 +1,61 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
+/* Fonte e base */
+body {
+  font-family: "Roboto Slab", serif;
+}
+
+h1, h2, h3, p{
+  font-family: "Saira Stencil", sans-serif;
+}
+
+/* Imagens nunca quebram layout */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container padrão */
+.container {
+  width: 100%;
+  padding: 12px;
+  margin: 0 auto;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+}
+
+/* Breakpoints globais */
+@media (min-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+  }
+}
