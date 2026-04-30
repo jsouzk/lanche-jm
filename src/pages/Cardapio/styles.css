@@ -1,242 +1,312 @@
-/* ================= BASE ================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
 
+/* ===== VARIÁVEIS ESCOPADAS ===== */
 .cardapio {
-  padding: 40px 20px;
+  --black: #0d0d0d;
+  --white: #f5f0e8;
+  --cream: #faf7f2;
+  --red: #c0392b;
+  --red-dark: #96281b;
+  --gray: #888;
+  --light-gray: #e8e3da;
+  --border: #ddd8d0;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  box-sizing: border-box;
+  font-family: var(--font-body);
+  background-color: var(--cream);
+  color: var(--black);
+  padding: 0 0 80px;
+}
+
+.cardapio *, .cardapio *::before, .cardapio *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== HERO DO CARDÁPIO ===== */
+.cardapio-hero {
+  background-color: var(--black);
+  color: var(--white);
   text-align: center;
+  padding: 64px 24px 52px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* ================= PRODUTOS ================= */
-
-.produtos {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
+.cardapio-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 60%, rgba(192, 57, 43, 0.2) 0%, transparent 65%);
+  pointer-events: none;
 }
 
-/* CARD */
-.produto-card {
-  background: #f5f5f5;
-  padding: 15px;
-  border-radius: 10px;
-  width: 250px;
-  transition: 0.3s;
-  text-align: center;
+.cardapio-hero-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--red);
+  border: 1px solid rgba(192, 57, 43, 0.4);
+  padding: 5px 16px;
+  border-radius: 999px;
+  margin-bottom: 20px;
 }
 
-.produto-card:hover {
-  transform: translateY(-5px);
+.cardapio-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 6vw, 60px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
 }
 
-/* IMAGEM */
-.produto-img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-/* TEXTO */
-.descricao {
-  font-size: 14px;
-  color: #555;
-  margin: 10px 0;
-  min-height: 40px;
-}
-
-.preco {
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #111;
-}
-
-/* BOTÃO */
-.produto-card button {
-  margin-top: 10px;
-  padding: 10px;
-  border: none;
-  background: rgb(131, 0, 0);
-  color: #fff;
-  cursor: pointer;
-  border-radius: 5px;
-  width: 100%;
-  transition: transform 0.15s ease, background 0.3s;
-}
-
-.produto-card button:hover {
-  background: rgb(102, 1, 1);
-}
-
-.produto-card button.clicked {
-  transform: scale(0.9);
-}
-
-/* ================= CATEGORIAS ================= */
-
+/* ===== BARRA DE CATEGORIAS ===== */
 .categorias {
   position: sticky;
-  top: 10px;
-  gap: 10px;
-
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
   display: flex;
-  justify-content: center;
   align-items: center;
-
+  gap: 8px;
+  padding: 12px 20px;
   overflow-x: auto;
-  padding: 10px;
-  background: #fff;
-  z-index: 1000;
+  scrollbar-width: none;
 }
 
 .categorias::-webkit-scrollbar {
   display: none;
 }
 
-.categorias {
-  scrollbar-width: none;
-}
-
 .categorias button {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
   white-space: nowrap;
-  padding: 8px 16px;
-  border: none;
-  background: #eee;
-  border-radius: 20px;
+  padding: 7px 16px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--black);
+  border-radius: 999px;
   cursor: pointer;
-  transition: 0.3s;
-  font-size: 14px;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
 }
 
 .categorias button:hover {
-  background: #ddd;
+  background: var(--black);
+  border-color: var(--black);
+  color: var(--white);
 }
 
-/* ================= SEÇÕES ================= */
-
+/* ===== SEÇÕES ===== */
 .secao-cardapio {
-  margin-bottom: 40px;
-  scroll-margin-top: 120px;
+  padding: 52px 24px 0;
+  scroll-margin-top: 62px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-/* ================= TOAST ================= */
+.secao-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
 
-.toast-container {
-  position: fixed;
-  top: calc(70px + 20px); /* altura do header + margem */
-  right: 20px;
+.secao-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3.5vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
 
+.secao-divider {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ===== GRID DE PRODUTOS ===== */
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+/* ===== CARD SEM IMAGEM ===== */
+.produto-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
 
+.produto-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.produto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.07);
+}
+
+.produto-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* PLACEHOLDER DE IMAGEM */
+.produto-img-placeholder {
+  width: 100%;
+  height: 130px;
+  border-radius: 8px;
+  background: var(--light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  color: var(--gray);
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.produto-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.descricao {
+  font-size: 13px;
+  color: var(--gray);
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 14px;
+}
+
+.preco {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 14px;
+}
+
+.produto-card button {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: var(--red);
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  margin-top: auto;
+}
+
+.produto-card button:hover {
+  background: var(--red-dark);
+}
+
+.produto-card button.clicked {
+  transform: scale(0.95);
+}
+
+/* ===== TOAST ===== */
+.toast-container {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   z-index: 2000;
-
+  pointer-events: none;
 }
 
 .toast {
-  background: #111;
-  color: #fff;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
   padding: 12px 18px;
-  border-radius: 8px;
-
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-
-  animation: slideIn 0.3s ease, fadeOut 0.3s ease 2.2s forwards;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  border-left: 3px solid var(--red);
+  animation: toastIn 0.3s ease, toastOut 0.3s ease 2.2s forwards;
 }
 
-.aviso-img {
-  display: block;
-  font-size: 0.65rem;
-  color: #999;
-  text-align: center;
-  margin-bottom: 4px;
-  letter-spacing: 0.3px;
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
-/* ANIMAÇÕES */
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+@keyframes toastOut {
+  to { opacity: 0; transform: translateX(20px); }
 }
 
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-}
-
-/* ================= RESPONSIVO ================= */
-
-/* TABLET */
+/* ===== RESPONSIVO ===== */
 @media (max-width: 768px) {
-
   .produtos {
-    gap: 15px;
-  }
-
-  .produto-card {
-    width: 45%;
-  }
-
-  .produto-img {
-    height: 140px;
-  }
-
-  .categorias {
-    justify-content: flex-start; /* melhor para scroll */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
 
-/* MOBILE */
 @media (max-width: 480px) {
+  .cardapio-hero {
+    padding: 48px 20px 40px;
+  }
 
-  .cardapio {
-    padding: 20px 10px;
+  .secao-cardapio {
+    padding: 40px 16px 0;
   }
 
   .produtos {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
   }
 
-  .produto-card {
-    width: 100%;
-    max-width: 350px;
-  }
-
-  .produto-img {
-    height: 130px;
-  }
-
-  .descricao {
-    font-size: 13px;
-  }
-
-  .categorias {
-    justify-content: flex-start;
-    padding: 8px;
-  }
-
-  .categorias button {
-    font-size: 13px;
-    padding: 6px 12px;
+  .produto-img-placeholder {
+    height: 100px;
   }
 
   .toast-container {
-    right: 10px;
-    left: 10px;
+    right: 12px;
+    left: 12px;
   }
 
   .toast {
-    width: 100%;
     text-align: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .produtos {
+    grid-template-columns: 1fr;
   }
 }

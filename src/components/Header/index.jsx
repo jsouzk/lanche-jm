@@ -1,45 +1,65 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import "../Header/styles.css";
+import "./styles.css";
 import Logo from "./../../images/Logotipo.png";
+
+const links = [
+  { to: "/",         label: "Home"     },
+  { to: "/cardapio", label: "Cardápio" },
+  { to: "/sobre",    label: "Sobre"    },
+  { to: "/carrinho", label: "Carrinho", destaque: true },
+];
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
 
-  // 🔒 BLOQUEIA SCROLL QUANDO MENU ABRE
+  /* bloqueia scroll quando o menu mobile abre */
   useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
+
+  /* fecha o menu ao mudar de rota */
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
 
   return (
     <header className="header">
       <div className="header-container">
 
         {/* LOGO */}
-        <div className="logo-area">
-          <img src={Logo} className="logo" alt="logotipo da lanchonete" />
-          <h1>Lanche J.M</h1>
-        </div>
+        <Link to="/" className="logo-area">
+          <img src={Logo} className="logo" alt="Logotipo Lanche J.M" />
+          <h1>Lanche <span>J.M</span></h1>
+        </Link>
 
-        {/* BOTÃO MENU */}
-        <div
-          className="menu-toggle"
-          onClick={() => setMenuOpen(!menuOpen)}
+        {/* HAMBÚRGUER */}
+        <button
+          className={`menu-toggle ${menuOpen ? "open" : ""}`}
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={menuOpen}
         >
-          ☰
-        </div>
+          <span />
+          <span />
+          <span />
+        </button>
 
         {/* NAV */}
         <nav className={`nav ${menuOpen ? "active" : ""}`}>
-          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link to="/cardapio" onClick={() => setMenuOpen(false)}>Cardápio</Link>
-          <Link to="/carrinho" onClick={() => setMenuOpen(false)}>Carrinho</Link>
-          <Link to="/sobre" onClick={() => setMenuOpen(false)}>Sobre</Link>
+          {links.map(({ to, label, destaque }) => (
+            <Link
+              key={to}
+              to={to}
+              className={destaque ? "nav-carrinho" : ""}
+              aria-current={location.pathname === to ? "page" : undefined}
+            >
+              {label}
+            </Link>
+          ))}
         </nav>
 
       </div>
