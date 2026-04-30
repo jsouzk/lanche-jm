@@ -32,6 +32,7 @@ function Footer() {
           <div className="footer-brand">
             <h2>Lanche <span>J.M</span></h2>
             <p>Lago do Limão — Iranduba, AM</p>
+            <p>Horário de Funcionamento: 18:00 até 23:00, de terça a domingo</p>
           </div>
 
           <div className="socials">
