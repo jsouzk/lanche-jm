@@ -282,7 +282,7 @@ const cardapio = [
       {
         id: 40,
         nome: "Combo 2 de X-Salada",
-        preco: 28,
+        preco: 35,
         descricao: "3 X-Saladas e um Refrigerante de 1 Lt + Batata Frita",
       },
       {
