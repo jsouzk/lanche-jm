@@ -601,12 +601,13 @@ const cardapio = [
 const categoriaEmoji = {
   "Pizzas Grandes": "🍕",
   "Pizzas Médias": "🍕",
-  Sanduíches: "🍔",
+  "Sanduíches": "🍔",
   "Combos de Sanduíches": "🍟",
   "Combos de Pizzas": "📦",
-  Pastéis: "🥟",
-  Kikão: "🌭",
+  "Pastéis": "🥟",
+  "Kikão": "🌭",
   "Outros Combos": "🎉",
+  "Refrigerantes": "🥤",
   "Bebidas Alcoólicas": "🍺",
 };
 

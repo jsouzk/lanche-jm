@@ -2,18 +2,52 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image" href="./src/images/Lanche J.M.ico" />
+
+    <!-- RESPONSIVIDADE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <meta name="description" content="Lanche J.M - Os melhores lanches, hambúrgueres e pizzas do Lago do Limão. Peça já o seu!" />
+    <meta name="keywords" content="lanche, hamburguer, pizza, delivery, Lago do Limão, lanche jm" />
+    <meta name="author" content="Lanche J.M" />
+
+    <!-- COMPARTILHAMENTO (WhatsApp, Facebook, etc.) -->
+    <meta property="og:title" content="Lanche J.M" />
+    <meta property="og:description" content="Os melhores lanches do Lago do Limão!" />
+    <meta property="og:image" content="/src/images/preview.png" />
+    <meta property="og:type" content="website" />
+
+    <!-- TEMA (barra do navegador no celular) -->
+    <meta name="theme-color" content="#ff0000" />
+
+    <!-- COMPATIBILIDADE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="./src/images/Lanche J.M.ico" />
+    <link rel="apple-touch-icon" href="/src/images/icon.png" />
+
+    <!-- FONTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- PERFORMANCE -->
+    <link rel="preload" href="/src/main.jsx" as="script" />
+
     <title>Lanche J.M</title>
   </head>
+
   <body>
-    <div id="root"></div>
+    <!-- LOADING INICIAL -->
+    <div id="root">
+      <p style="text-align: center; margin-top: 20px;">Carregando...</p>
+    </div>
+
+    <!-- SCRIPT PRINCIPAL -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
