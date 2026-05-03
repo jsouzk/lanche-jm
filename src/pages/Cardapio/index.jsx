@@ -540,6 +540,12 @@ const cardapio = [
         preco: 5,
         descricao: "Refrigerante Pepsi Lata",
       },
+      {
+        id: 101,
+        nome: "Baré Lata",
+        preco: 5,
+        descricao: "Refrigerante Baré Lata",
+      },
     ],
   },
   {
@@ -571,13 +577,13 @@ const cardapio = [
       },
       {
         id: 94,
-        nome: "Heineken Long Neck",
+        nome: "Heineken LongNeck",
         preco: 10,
         descricao: "Heineken 330ml",
       },
       {
         id: 95,
-        nome: "Corona Long Neck",
+        nome: "Corona LongNeck",
         preco: 10,
         descricao: "Corona 330ml",
       },
@@ -592,6 +598,29 @@ const cardapio = [
         nome: "Copão de Gin 500ml",
         preco: 12,
         descricao: "Gin, gelo saborizado e energético",
+      },
+    ],
+  },
+  {
+    categoria: "Porções de Batata",
+    produtos: [
+      {
+        id: 98,
+        nome: "Porção de Batata Frita P",
+        preco: 10,
+        descricao: "Batata Frita P",
+      },
+      {
+        id: 99,
+        nome: "Porção de Batata Frita M",
+        preco: 15,
+        descricao: "Batata Frita M",
+      },
+      {
+        id: 100,
+        nome: "Porção de Batata Frita G",
+        preco: 20,
+        descricao: "Batata Frita G",
       },
     ],
   },

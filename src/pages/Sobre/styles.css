@@ -246,6 +246,7 @@
   display: flex;
   justify-content: center;
   margin-top: 18px;
+  
 }
 
 .github-link {
@@ -261,6 +262,7 @@
   box-shadow: 4px 4px 0 var(--ketchup);
   text-decoration: none;
   font-weight: 900;
+  
 }
 
 @media (max-width: 860px) {
