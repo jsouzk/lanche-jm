@@ -111,7 +111,7 @@ function Carrinho() {
       return;
     }
 
-    const divisor = "-----------------------------";
+    const divisor = "--------------------------------------------";
     const itens = cart
       .map((item) => `- ${item.nome} x${item.quantity} - R$ ${(item.preco * item.quantity).toFixed(2)}`)
       .join("\n");
