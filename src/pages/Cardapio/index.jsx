@@ -96,6 +96,23 @@ const cardapio = [
     ],
   },
   {
+    categoria: "Pizza Familia",
+    produtos: [
+      {
+        id: 102,
+        nome: "Pizza Familia",
+        preco: 52,
+        descricao: "Você pode escolher até 3 dos sabores que estão no cardápio, exceto as pizzas de chocolate com banana, chocolate, e bacon. (Digite os sabores no campo de observações no carrinho)",
+      },
+      {
+        id: 103,
+        nome: "Combo de Pizza Familia",
+        preco: 60,
+        descricao: "1 Pizza Tamanho Familia + Refrigerante Tradicional de 2 Lts + Porção de Batata",
+      },
+    ],
+  },
+  {
     categoria: "Pizzas Médias",
     produtos: [
       {
@@ -267,6 +284,12 @@ const cardapio = [
         nome: "Misto simples",
         preco: 5,
         descricao: "Pão de forma, queijo e presunto",
+      },
+      {
+        id: 104,
+        nome: "X-Quarteirão",
+        preco: 12,
+        descricao: "Pão de hamburguer, carne, queijo cheddar duplo, presunto, cebola, tomate e alface",
       },
     ],
   },
