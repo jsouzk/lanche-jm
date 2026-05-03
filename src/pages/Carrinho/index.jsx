@@ -40,8 +40,8 @@ function Carrinho() {
   const total = subtotal + taxaEntrega;
 
   let taxaPagamento = 0;
-  if (pagamento === "crédito") taxaPagamento = total * 0.0498;
-  else if (pagamento === "débito") taxaPagamento = total * 0.0199;
+  if (pagamento === "credito") taxaPagamento = total * 0.0498;
+  else if (pagamento === "debito") taxaPagamento = total * 0.0199;
 
   const totalFinal = total + taxaPagamento;
   const troco = pagamento === "dinheiro" ? valorNumerico - totalFinal : 0;
