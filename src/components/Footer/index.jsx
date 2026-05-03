@@ -1,5 +1,5 @@
+import { FaInstagram, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 import "./styles.css";
-import { FaInstagram, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 
 const socials = [
   {
@@ -9,7 +9,7 @@ const socials = [
     className: "social-link",
   },
   {
-    href: "https://wa.me/5592984525890?text=Olá,%20gostaria%20de%20fazer%20um%20pedido!",
+    href: "https://wa.me/5592984525890?text=Ol%C3%A1,%20gostaria%20de%20fazer%20um%20pedido!",
     label: "Pedir pelo WhatsApp",
     icon: <FaWhatsapp className="icon" />,
     className: "social-link whatsapp",
@@ -26,24 +26,19 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-
-        {/* TOPO */}
         <div className="footer-top">
           <div className="footer-brand">
-            <h2>Lanche <span>J.M</span></h2>
-            <p>Lago do Limão — Iranduba, AM</p>
-            <p>Horário de Funcionamento: 18:00 até 23:00, de terça a domingo</p>
+            <h2>
+              Lanche <span>J.M</span>
+            </h2>
+            <p>Lago do Limão - Iranduba, AM</p>
+            <p>Funcionamento: 18:00 às 23:00, de terça a domingo</p>
+            <p>Localizado em frente a quadra</p>
           </div>
 
           <div className="socials">
             {socials.map(({ href, label, icon, className }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noreferrer"
-                className={className}
-              >
+              <a key={label} href={href} target="_blank" rel="noreferrer" className={className}>
                 {icon}
                 <span>{label}</span>
               </a>
@@ -51,10 +46,9 @@ function Footer() {
           </div>
         </div>
 
-        {/* BOTTOM */}
         <div className="footer-bottom">
           <p className="footer-text">
-            © {new Date().getFullYear()} Lanche J.M — Todos os direitos reservados
+            © {new Date().getFullYear()} Lanche J.M - Todos os direitos reservados
           </p>
           <p className="footer-credit">
             Desenvolvido por{" "}
@@ -63,7 +57,6 @@ function Footer() {
             </a>
           </p>
         </div>
-
       </div>
     </footer>
   );

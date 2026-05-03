@@ -1,82 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
-
-/* ===== VARIÁVEIS ESCOPADAS ===== */
 .cardapio {
-  --black: #0d0d0d;
-  --white: #f5f0e8;
-  --cream: #faf7f2;
-  --red: #c0392b;
-  --red-dark: #96281b;
-  --gray: #888;
-  --light-gray: #e8e3da;
-  --border: #ddd8d0;
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'DM Sans', sans-serif;
+  --ink: var(--color-brand-ink);
+  --paper: var(--color-brand-paper);
+  --cream: var(--color-brand-cream);
+  --cheese: var(--color-brand-secondary);
+  --ketchup: var(--color-brand-primary);
+  --lettuce: #70b547;
+  --sky: #95d8ff;
+  --font-display: var(--font-brand-display);
+  --font-body: var(--font-brand-body);
 
-  box-sizing: border-box;
+  min-height: 100%;
+  padding-bottom: 80px;
+  background:
+    linear-gradient(90deg, #2517130a 1px, transparent 1px) 0 0 / 28px 28px,
+    linear-gradient(#2517130a 1px, transparent 1px) 0 0 / 28px 28px,
+    var(--cream);
+  color: var(--ink);
   font-family: var(--font-body);
-  background-color: var(--cream);
-  color: var(--black);
-  padding: 0 0 80px;
 }
 
-.cardapio *, .cardapio *::before, .cardapio *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* ===== HERO DO CARDÁPIO ===== */
 .cardapio-hero {
-  background-color: var(--black);
-  color: var(--white);
+  padding: 68px 20px 54px;
   text-align: center;
-  padding: 64px 24px 52px;
+  background: #950606;
+  border-bottom: 5px solid var(--ink);
+  color: #fff;
   position: relative;
-  overflow: hidden;
-}
-
-.cardapio-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 60%, rgba(192, 57, 43, 0.2) 0%, transparent 65%);
-  pointer-events: none;
 }
 
 .cardapio-hero-eyebrow {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--red);
-  border: 1px solid rgba(192, 57, 43, 0.4);
-  padding: 5px 16px;
+  display: inline-flex;
+  padding: 7px 14px;
+  margin-bottom: 14px;
+  border: 3px solid var(--ink);
   border-radius: 999px;
-  margin-bottom: 20px;
+  background: var(--paper);
+  box-shadow: 3px 3px 0 var(--ink);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .cardapio-hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(32px, 6vw, 60px);
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
+  font-size: clamp(42px, 8vw, 78px);
+  line-height: 0.92;
+  text-shadow: 4px 4px 0 var(--ink);
 }
 
-/* ===== BARRA DE CATEGORIAS ===== */
+.cardapio-hero p {
+  max-width: 620px;
+  margin: 14px auto 0;
+  color: #fff4cf;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
 .categorias {
   position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
+  top: 86px;
+  z-index: 90;
   display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
+  gap: 10px;
   overflow-x: auto;
+  padding: 14px max(14px, calc((100vw - 1120px) / 2));
+  background: var(--paper);
+  border-bottom: 4px solid var(--ink);
   scrollbar-width: none;
 }
 
@@ -85,228 +75,192 @@
 }
 
 .categorias button {
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 500;
-  white-space: nowrap;
-  padding: 7px 16px;
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--black);
-  border-radius: 999px;
+  flex: 0 0 auto;
+  min-height: 42px;
+  padding: 8px 14px;
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  background: var(--cheese);
+  color: var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
   cursor: pointer;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 800;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
 }
 
 .categorias button:hover {
-  background: var(--black);
-  border-color: var(--black);
-  color: var(--white);
+  background: #fff;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--ink);
 }
 
-/* ===== SEÇÕES ===== */
 .secao-cardapio {
-  padding: 52px 24px 0;
-  scroll-margin-top: 62px;
-  max-width: 1100px;
+  width: min(100%, 1120px);
   margin: 0 auto;
+  padding: 54px 20px 0;
+  scroll-margin-top: 160px;
 }
 
 .secao-header {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
 }
 
 .secao-header h2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--font-display);
-  font-size: clamp(22px, 3.5vw, 32px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  white-space: nowrap;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1;
 }
 
 .secao-divider {
+  min-width: 40px;
   flex: 1;
-  height: 1px;
-  background: var(--border);
+  height: 4px;
+  border-radius: 999px;
+  background: var(--ink);
 }
 
-/* ===== GRID DE PRODUTOS ===== */
 .produtos {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+  gap: 18px;
 }
 
-/* ===== CARD SEM IMAGEM ===== */
 .produto-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 20px;
+  min-height: 236px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.produto-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--red);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
+  padding: 18px;
+  background: var(--paper);
+  border: 4px solid var(--ink);
+  border-radius: 18px;
+  box-shadow: 6px 6px 0 var(--ink);
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
 }
 
 .produto-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.07);
-}
-
-.produto-card:hover::after {
-  transform: scaleX(1);
-}
-
-/* PLACEHOLDER DE IMAGEM */
-.produto-img-placeholder {
-  width: 100%;
-  height: 130px;
-  border-radius: 8px;
-  background: var(--light-gray);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 14px;
-  color: var(--gray);
-  font-size: 28px;
-  flex-shrink: 0;
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--ink);
 }
 
 .produto-card h3 {
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 1.35;
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.05;
   margin-bottom: 8px;
 }
 
 .descricao {
-  font-size: 13px;
-  color: var(--gray);
-  line-height: 1.6;
+  color: #62483f;
+  font-size: 14px;
+  line-height: 1.5;
   flex: 1;
-  margin-bottom: 14px;
 }
 
 .preco {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--black);
-  margin-bottom: 14px;
+  width: fit-content;
+  margin: 14px 0;
+  padding: 6px 12px;
+  background: var(--cheese);
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  box-shadow: 3px 3px 0 var(--ink);
+  font-weight: 900;
 }
 
 .produto-card button {
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 600;
   width: 100%;
-  padding: 10px;
-  border: none;
-  background: var(--red);
-  color: #fff;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.15s ease;
+  min-height: 46px;
   margin-top: auto;
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  background: var(--ketchup);
+  color: #fff;
+  box-shadow: 4px 4px 0 var(--ink);
+  cursor: pointer;
+  font-weight: 900;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, background 0.14s ease;
 }
 
 .produto-card button:hover {
-  background: var(--red-dark);
+  background: #950606;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--ink);
 }
 
 .produto-card button.clicked {
-  transform: scale(0.95);
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--ink);
 }
 
-/* ===== TOAST ===== */
 .toast-container {
   position: fixed;
-  top: 80px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  z-index: 2000;
+  top: 104px;
+  right: 18px;
+  z-index: 2500;
+  display: grid;
+  gap: 10px;
   pointer-events: none;
 }
 
 .toast {
-  background: var(--black);
-  color: var(--white);
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 500;
-  padding: 12px 18px;
-  border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-  border-left: 3px solid var(--red);
-  animation: toastIn 0.3s ease, toastOut 0.3s ease 2.2s forwards;
+  max-width: min(340px, calc(100vw - 32px));
+  padding: 13px 16px;
+  background: var(--lettuce);
+  color: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 15px;
+  box-shadow: 5px 5px 0 var(--ink);
+  font-weight: 900;
+  animation: toastIn 0.2s ease, toastOut 0.22s ease 2.2s forwards;
 }
 
 @keyframes toastIn {
-  from { opacity: 0; transform: translateX(20px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from { opacity: 0; transform: translateX(18px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes toastOut {
-  to { opacity: 0; transform: translateX(20px); }
+  to { opacity: 0; transform: translateX(18px); }
 }
 
-/* ===== RESPONSIVO ===== */
-@media (max-width: 768px) {
-  .produtos {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+@media (max-width: 900px) {
+  .categorias {
+    top: 76px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 620px) {
   .cardapio-hero {
-    padding: 48px 20px 40px;
+    padding: 48px 14px 40px;
   }
 
   .secao-cardapio {
-    padding: 40px 16px 0;
+    padding-inline: 14px;
+  }
+
+  .secao-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .secao-divider {
+    width: 100%;
+    flex: none;
   }
 
   .produtos {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .produto-img-placeholder {
-    height: 100px;
+    grid-template-columns: 1fr;
   }
 
   .toast-container {
-    right: 12px;
     left: 12px;
-  }
-
-  .toast {
-    text-align: center;
-  }
-}
-
-@media (max-width: 360px) {
-  .produtos {
-    grid-template-columns: 1fr;
+    right: 12px;
   }
 }

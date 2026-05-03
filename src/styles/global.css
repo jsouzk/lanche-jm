@@ -1,61 +1,61 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=DM+Sans:wght@400;500;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #950606;
+  --color-brand-secondary: #ffd447;
+  --color-brand-ink: #251713;
+  --color-brand-paper: #fffaf0;
+  --color-brand-cream: #fff4cf;
+  --font-brand-display: "Baloo 2", system-ui, sans-serif;
+  --font-brand-body: "DM Sans", system-ui, sans-serif;
 }
 
-html, body, #root {
-  height: 100%;
-}
+@layer base {
+  * {
+    @apply box-border m-0 p-0;
+  }
 
-.app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+  html,
+  body,
+  #root {
+    @apply min-h-full;
+  }
 
-.content {
-  flex: 1;
-}
+  body {
+    @apply min-w-80 bg-brand-cream text-brand-ink font-brand-body;
+  }
 
-/* Fonte e base */
-body {
-  font-family: "Roboto Slab", serif;
-}
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
 
-h1, h2, h3, p{
-  font-family: "Saira Stencil", sans-serif;
-}
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
 
-/* Imagens nunca quebram layout */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Container padrão */
-.container {
-  width: 100%;
-  padding: 12px;
-  margin: 0 auto;
-}
-
-.loading {
-  text-align: center;
-  padding: 40px;
-  font-size: 1.2rem;
-}
-
-/* Breakpoints globais */
-@media (min-width: 768px) {
-  .container {
-    padding: 20px;
+  img {
+    @apply block max-w-full h-auto;
   }
 }
 
-@media (min-width: 1024px) {
+@layer components {
+  .app {
+    @apply flex min-h-screen flex-col;
+  }
+
+  .content {
+    @apply flex-1;
+  }
+
   .container {
-    max-width: 1200px;
+    @apply mx-auto w-full max-w-6xl px-5;
+  }
+
+  .loading {
+    @apply grid min-h-[45vh] place-items-center font-brand-display text-2xl;
   }
 }

@@ -56,7 +56,7 @@ const cardapio = [
       },
       {
         id: 8,
-        nome: "Dois Queijos (Grande)",
+        nome: "Dois queijos (Grande)",
         preco: 34,
         descricao:
           "Molho de tomate, queijo mussarela, queijo cheddar e orégano",
@@ -264,7 +264,7 @@ const cardapio = [
       },
       {
         id: 38,
-        nome: "Misto Simples",
+        nome: "Misto simples",
         preco: 5,
         descricao: "Pão de forma, queijo e presunto",
       },
@@ -277,33 +277,33 @@ const cardapio = [
         id: 39,
         nome: "Combo 1 de X-Salada",
         preco: 20,
-        descricao: "2 X-Saladas e um Refrigerante em Lata + Batata Frita",
+        descricao: "2 X-Saladas e um Refrigerante em Lata + Batata frita",
       },
       {
         id: 40,
         nome: "Combo 2 de X-Salada",
         preco: 35,
-        descricao: "3 X-Saladas e um Refrigerante de 1 Lt + Batata Frita",
+        descricao: "3 X-Saladas e um Refrigerante de 1 Lt + Batata frita",
       },
       {
         id: 41,
         nome: "Combo 3 de X-Salada",
         preco: 46,
-        descricao: "4 X-Saladas e um Refrigerante de 2 Lts + Batata Frita",
+        descricao: "4 X-Saladas e um Refrigerante de 2 Lts + Batata frita",
       },
       {
         id: 42,
         nome: "Combo 4 de X-Salada",
         preco: 62,
         descricao:
-          "5 X-Saladas e um Refrigerante Coca-Cola de 2 Lts + Batata Frita",
+          "5 X-Saladas e um Refrigerante Coca-Cola de 2 Lts + Batata frita",
       },
       {
         id: 43,
         nome: "Combo 5 de X-Salada",
         preco: 76,
         descricao:
-          "7 X-Saladas e um Refrigerante Tradicional de 2 Lts + Batata Frita",
+          "7 X-Saladas e um Refrigerante Tradicional de 2 Lts + Batata frita",
       },
     ],
   },
@@ -315,27 +315,27 @@ const cardapio = [
         nome: "Combo Casal Perfeito",
         preco: 84,
         descricao:
-          "2 Pizzas Grandes e um Refrigerante Coca-Cola de 2 Lts + Batata Frita",
+          "2 Pizzas Grandes e um Refrigerante Coca-Cola de 2 Lts + Batata frita",
       },
       {
         id: 45,
         nome: "Combo Dupla Delícia",
         preco: 59,
         descricao:
-          "2 Pizzas Médias e um Refrigerante Coca-Cola de 2 Lts + Batata Frita",
+          "2 Pizzas Médias e um Refrigerante Coca-Cola de 2 Lts + Batata frita",
       },
       {
         id: 46,
         nome: "Combo Brocado",
         preco: 115,
         descricao:
-          "3 Pizzas Grandes e um Refrigerante Tradicional de 2 Lts + Batata Frita",
+          "3 Pizzas Grandes e um Refrigerante Tradicional de 2 Lts + Batata frita",
       },
       {
         id: 47,
         nome: "Combo Trio Tentação",
         preco: 78,
-        descricao: "2 Pizzas Grandes e um Refrigerante de 2 Lts + Batata Frita",
+        descricao: "2 Pizzas Grandes e um Refrigerante de 2 Lts + Batata frita",
       },
     ],
   },
@@ -386,7 +386,7 @@ const cardapio = [
         id: 56,
         nome: "Combo de Kikão",
         preco: 24,
-        descricao: "3 Kikão e um Refrigerante de 1 Lt + Batata Frita",
+        descricao: "3 Kikão e um Refrigerante de 1 Lt + Batata frita",
       },
     ],
   },
@@ -398,28 +398,28 @@ const cardapio = [
         nome: "Combo de Mini Pizzas",
         preco: 30,
         descricao:
-          "4 Mini pizzas e um refrigerante Baré de 1 Lt + Batata Frita",
+          "4 Mini pizzas e um refrigerante Baré de 1 Lt + Batata frita",
       },
       {
         id: 58,
         nome: "Combo Dose Dupla",
         preco: 50,
         descricao:
-          "2 Mini pizzas, 2 Kikão, 2 X-Saladas e um refrigerante tradicional de 2 Lts + Batata Frita",
+          "2 Mini pizzas, 2 Kikão, 2 X-Saladas e um refrigerante tradicional de 2 Lts + Batata frita",
       },
       {
         id: 59,
         nome: "Combo Os Curumins",
         preco: 39,
         descricao:
-          "2 Hambúrgueres, 2 Mistos simples, 2 Pastéis e um refrigerante de 1 Lt + Batata Frita",
+          "2 Hambúrgueres, 2 Mistos simples, 2 Pastéis e um refrigerante de 1 Lt + Batata frita",
       },
       {
         id: 60,
         nome: "Combo Turbinado",
         preco: 26,
         descricao:
-          "1 X-Salada, 1 Misto quente, 1 Kikão, 1 Refrigerante em lata + Batata Frita",
+          "1 X-Salada, 1 Misto quente, 1 Kikão, 1 Refrigerante em lata + Batata frita",
       },
     ],
   },
@@ -454,7 +454,7 @@ const cardapio = [
         id: 75,
         nome: "Coca-Cola 2Lt",
         preco: 14,
-        descricao: "Refrigerante Coca-Cola 2Lt - Sabor Original",
+        descricao: "Refrigerante Coca-Cola 2Lt - sabor original",
       },
       {
         id: 76,
@@ -472,7 +472,7 @@ const cardapio = [
         id: 78,
         nome: "Coca-Cola 1Lt",
         preco: 9,
-        descricao: "Refrigerante Coca-Cola 1Lt - Sabor Original",
+        descricao: "Refrigerante Coca-Cola 1Lt - sabor original",
       },
       {
         id: 79,
@@ -512,9 +512,9 @@ const cardapio = [
       },
       {
         id: 85,
-        nome: "Guaraná Antártica 1Lt",
+        nome: "Guaraná Antarctica 1Lt",
         preco: 7,
-        descricao: "Refrigerante Guaraná Antártica 1Lt",
+        descricao: "Refrigerante Guaraná Antarctica 1Lt",
       },
       {
         id: 86,
@@ -549,7 +549,7 @@ const cardapio = [
         id: 90,
         nome: "Caixa Itaipava",
         preco: 46,
-        descricao: "Caixa Itaipava 269ml — 15 unidades",
+        descricao: "Caixa Itaipava 269ml - 15 unidades",
       },
       {
         id: 91,
@@ -583,7 +583,7 @@ const cardapio = [
       },
       {
         id: 96,
-        nome: "Copão 500ml",
+        nome: "Copão de Whisky 500ml",
         preco: 10,
         descricao: "Whisky, gelo saborizado e energético",
       },
@@ -596,20 +596,6 @@ const cardapio = [
     ],
   },
 ];
-
-/* ── emoji por categoria (será substituído pelas fotos futuramente) ── */
-const categoriaEmoji = {
-  "Pizzas Grandes": "🍕",
-  "Pizzas Médias": "🍕",
-  "Sanduíches": "🍔",
-  "Combos de Sanduíches": "🍟",
-  "Combos de Pizzas": "📦",
-  "Pastéis": "🥟",
-  "Kikão": "🌭",
-  "Outros Combos": "🎉",
-  "Refrigerantes": "🥤",
-  "Bebidas Alcoólicas": "🍺",
-};
 
 function Cardapio() {
   const { addToCart } = useCart();
@@ -650,8 +636,8 @@ function Cardapio() {
 
       {/* HERO */}
       <div className="cardapio-hero">
-        <span className="cardapio-hero-eyebrow">Lanche J.M</span>
         <h1>Cardápio</h1>
+        <p>Escolha uma categoria, adicione ao carrinho e finalize pelo WhatsApp.</p>
       </div>
 
       {/* CATEGORIAS */}
@@ -661,12 +647,12 @@ function Cardapio() {
             key={secao.categoria}
             onClick={() => scrollToSecao(secao.categoria)}
           >
-            {categoriaEmoji[secao.categoria]} {secao.categoria}
+            {secao.categoria}
           </button>
         ))}
       </nav>
 
-      {/* SEÇÕES */}
+      {/* SEES */}
       {cardapio.map((secao) => (
         <section
           key={secao.categoria}
@@ -675,7 +661,7 @@ function Cardapio() {
         >
           <div className="secao-header">
             <h2>
-              {categoriaEmoji[secao.categoria]} {secao.categoria}
+              {secao.categoria}
             </h2>
             <div className="secao-divider" />
           </div>
