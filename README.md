@@ -44,7 +44,6 @@ lanche-jm/
 │   ├── components/   # Componentes reutilizáveis
 │   ├── pages/        # Páginas da aplicação
 │   ├── context/      # Gerenciamento de estado global
-│   ├── data/         # Dados mockados do cardápio
 │   └── App.jsx
 │
 ├── index.html
