@@ -1,18 +1,117 @@
-# React + Vite
+# 🍔 Lanche J.M
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web para pedidos de lanchonete, com foco em praticidade, performance e experiência do usuário.
 
-Currently, two official plugins are available:
+🔗 **Acesse o projeto:** https://lanchejm.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 📌 Sobre o projeto
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+O **Lanche J.M** é um sistema frontend desenvolvido para simular o fluxo de pedidos de uma lanchonete, permitindo ao usuário navegar pelo cardápio e montar seu pedido de forma intuitiva.
 
-Note: This will impact Vite dev & build performances.
+Atualmente, o sistema funciona totalmente no **frontend**, mas já está estruturado para futura integração com um backend robusto.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Tecnologias utilizadas
+
+* React.js
+* Vite
+* Tailwind CSS
+* React Router DOM
+* ESLint
+
+---
+
+## 📦 Funcionalidades
+
+* 📋 Listagem de produtos por categoria
+* 🛒 Montagem de pedidos
+* 💰 Cálculo automático de valores
+* 📱 Interface responsiva
+* ⚡ Navegação rápida (SPA)
+
+---
+
+## 📁 Estrutura do projeto
+
+```bash
+lanche-jm/
+│
+├── public/
+├── src/
+│   ├── components/   # Componentes reutilizáveis
+│   ├── pages/        # Páginas da aplicação
+│   ├── context/      # Gerenciamento de estado global
+│   ├── data/         # Dados mockados do cardápio
+│   └── App.jsx
+│
+├── index.html
+├── package.json
+├── vite.config.js
+└── eslint.config.js
+```
+
+---
+
+## ▶️ Como rodar localmente
+
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/lanche-jm.git
+
+# Acesse a pasta
+cd lanche-jm
+
+# Instale as dependências
+npm install
+
+# Inicie o projeto
+npm run dev
+```
+
+---
+
+## 🌐 Deploy
+
+O projeto está hospedado na **Vercel**:
+
+🔗 https://lanchejm.vercel.app
+
+---
+
+## 🔮 Próximas melhorias (Backend)
+
+Planejamento de integração com:
+
+* **Django REST Framework**
+
+Funcionalidades futuras:
+
+* API de pedidos
+* Persistência em banco de dados
+* Cálculo de taxas e troco no backend
+* Integração com WhatsApp
+* Geração de pagamento via Pix
+* Painel administrativo
+
+---
+
+## 📌 Status do projeto
+
+🚧 Em desenvolvimento
+✅ Frontend funcional
+🔜 Backend em desenvolvimento futuro
+
+---
+
+## 👨‍💻 Autor
+
+**Julio Souza**
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT.
