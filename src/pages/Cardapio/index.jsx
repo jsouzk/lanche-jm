@@ -209,7 +209,7 @@ const cardapio = [
       {
         id: 27,
         nome: "X-Tudo com carne artesanal",
-        preco: 23,
+        preco: 27,
         descricao:
           "Pão, presunto de peru, queijo, carne artesanal, calabresa, salsicha, ovo, bacon, tomate e alface",
       },
@@ -230,7 +230,7 @@ const cardapio = [
       {
         id: 30,
         nome: "X-Salada artesanal",
-        preco: 16,
+        preco: 20,
         descricao:
           "Pão, presunto de peru, queijo, carne artesanal, ovo, tomate e alface",
       },
@@ -365,20 +365,27 @@ const cardapio = [
   {
     categoria: "Pastéis",
     produtos: [
-      { id: 48, nome: "Pastel de Queijo (M)", preco: 6, descricao: "Queijo" },
-      {
-        id: 49,
-        nome: "Pastel de Queijo com Banana (M)",
+      { id: 48,
+        nome: "Queijo (M)",
         preco: 6,
-        descricao: "Queijo e Banana",
+        descricao: "Queijo"
       },
-      { id: 50, nome: "Misto (M)", preco: 6, descricao: "Carne e Queijo" },
-      { id: 51, nome: "Queijo (G)", preco: 7, descricao: "Queijo" },
+      { id: 50,
+        nome: "Misto (M)",
+        preco: 6,
+        descricao: "Carne e Queijo" 
+      },
       {
         id: 52,
         nome: "Queijo com Banana (G)",
         preco: 7,
         descricao: "Queijo e Banana",
+      },
+      {
+        id: 105,
+        nome: "Carne de Sol (G)",
+        preco: 7,
+        descricao: "Carne de Sol com Banana",
       },
       {
         id: 53,
