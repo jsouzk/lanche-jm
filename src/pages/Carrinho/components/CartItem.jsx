@@ -1,6 +1,6 @@
 import { formatCurrency } from "../../../utils/formatCurrency";
 
-function CartItem({ item, onIncrease, onDecrease, onRemove }) {
+function CartItem({ item, onIncrease, onDecrease, onRemove, onObservationChange }) {
   const cartKey = item.cartId || String(item.id);
 
   return (
@@ -25,10 +25,22 @@ function CartItem({ item, onIncrease, onDecrease, onRemove }) {
             +
           </button>
         </div>
+        <label className="item-note">
+          Observação do item
+          <textarea
+            rows={2}
+            placeholder="Ex: sem cebola, molho separado..."
+            value={item.observation || ""}
+            onChange={(event) => onObservationChange(cartKey, event.target.value)}
+          />
+        </label>
       </div>
 
       <div className="cart-actions">
-        <span>{formatCurrency(item.preco * item.quantity)}</span>
+        <div className="item-prices">
+          <span>Unitário: {formatCurrency(item.preco)}</span>
+          <strong>Total: {formatCurrency(item.preco * item.quantity)}</strong>
+        </div>
         <button className="btn-remove" onClick={() => onRemove(cartKey)}>
           Remover
         </button>

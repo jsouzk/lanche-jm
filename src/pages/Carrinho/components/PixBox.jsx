@@ -13,6 +13,11 @@ function PixBox({ payloadPix }) {
   return (
     <div className="pix-box">
       <h3>Pague com Pix</h3>
+      <ol className="pix-steps">
+        <li>Escaneie o QR Code.</li>
+        <li>Ou copie o código Pix.</li>
+        <li>Envie o comprovante no WhatsApp.</li>
+      </ol>
       <QRCodeCanvas value={payloadPix} size={180} />
       <div className="pix-copy">
         <span>{payloadPix}</span>
@@ -20,7 +25,7 @@ function PixBox({ payloadPix }) {
           {copiado ? "Copiado" : "Copiar código"}
         </button>
       </div>
-      <small>O valor já está preenchido. Após pagar, envie o comprovante no WhatsApp.</small>
+      <small>O valor já está preenchido no código Pix.</small>
     </div>
   );
 }

@@ -21,7 +21,7 @@ export const locaisEntrega = [
   { value: "km26", label: "KM26", taxa: 20 },
   { value: "vila", label: "Vila", taxa: 2 },
   { value: "jutai", label: "Jutaí", taxa: 3 },
-  { value: "chacaras do limão", label: "Chácaras do Limão", taxa: 3 },
+  { value: "chacaras_do_limao", label: "Chácaras do Limão", taxa: 3 },
 ];
 
 export const taxasEntrega = locaisEntrega.reduce((acc, local) => {

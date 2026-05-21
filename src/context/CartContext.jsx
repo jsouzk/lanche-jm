@@ -61,6 +61,16 @@ export const CartProvider = ({ children }) => {
     setCart((prev) => prev.filter((item) => (item.cartId || String(item.id)) !== cartId));
   };
 
+  const updateItemObservation = (cartId, observation) => {
+    setCart((prev) =>
+      prev.map((item) =>
+        (item.cartId || String(item.id)) === cartId
+          ? { ...item, observation }
+          : item
+      )
+    );
+  };
+
   /* LIMPAR */
   const clearCart = () => setCart([]);
 
@@ -72,6 +82,7 @@ export const CartProvider = ({ children }) => {
         increase,
         decrease,
         removeFromCart,
+        updateItemObservation,
         clearCart,
       }}
     >
