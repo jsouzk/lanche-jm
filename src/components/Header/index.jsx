@@ -1,5 +1,5 @@
+import { createElement, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { FaHome, FaInfoCircle, FaShoppingCart, FaUtensils } from "react-icons/fa";
 
 import "./styles.css";
@@ -23,14 +23,17 @@ function Header() {
     };
   }, [menuOpen]);
 
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [location.pathname]);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <header className="header">
       <div className="header-container">
-        <Link to="/" className="logo-area" aria-label="Ir para a página inicial">
+        <Link
+          to="/"
+          className="logo-area"
+          aria-label="Ir para a página inicial"
+          onClick={closeMenu}
+        >
           <span className="logo-frame">
             <img src={Logo} className="logo" alt="Logotipo Lanche J.M" />
           </span>
@@ -54,14 +57,15 @@ function Header() {
         </button>
 
         <nav id="main-navigation" className={`nav ${menuOpen ? "active" : ""}`}>
-          {links.map(({ to, label, icon: Icon, destaque }) => (
+          {links.map(({ to, label, icon, destaque }) => (
             <Link
               key={to}
               to={to}
               className={destaque ? "nav-carrinho" : ""}
               aria-current={location.pathname === to ? "page" : undefined}
+              onClick={closeMenu}
             >
-              <Icon aria-hidden="true" />
+              {createElement(icon, { "aria-hidden": true })}
               <span>{label}</span>
             </Link>
           ))}

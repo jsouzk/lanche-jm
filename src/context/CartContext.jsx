@@ -1,8 +1,6 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-const CartContext = createContext();
-
-export const useCart = () => useContext(CartContext);
+import { CartContext } from "./cartContextValue";
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState(() => {
@@ -18,25 +16,27 @@ export const CartProvider = ({ children }) => {
   /* ADICIONAR */
   const addToCart = (item) => {
     setCart((prev) => {
-      const exists = prev.find((p) => p.id === item.id);
+      const itemKey = item.cartId || String(item.id);
+      const itemToAdd = { ...item, cartId: itemKey };
+      const exists = prev.find((p) => (p.cartId || String(p.id)) === itemKey);
 
       if (exists) {
         return prev.map((p) =>
-          p.id === item.id
-            ? { ...p, quantity: p.quantity + 1 }
+          (p.cartId || String(p.id)) === itemKey
+            ? { ...p, cartId: itemKey, quantity: p.quantity + 1 }
             : p
         );
       }
 
-      return [...prev, { ...item, quantity: 1 }];
+      return [...prev, { ...itemToAdd, quantity: 1 }];
     });
   };
 
   /* AUMENTAR */
-  const increase = (id) => {
+  const increase = (cartId) => {
     setCart((prev) =>
       prev.map((item) =>
-        item.id === id
+        (item.cartId || String(item.id)) === cartId
           ? { ...item, quantity: item.quantity + 1 }
           : item
       )
@@ -44,11 +44,11 @@ export const CartProvider = ({ children }) => {
   };
 
   /* DIMINUIR */
-  const decrease = (id) => {
+  const decrease = (cartId) => {
     setCart((prev) =>
       prev
         .map((item) =>
-          item.id === id
+          (item.cartId || String(item.id)) === cartId
             ? { ...item, quantity: item.quantity - 1 }
             : item
         )
@@ -57,8 +57,8 @@ export const CartProvider = ({ children }) => {
   };
 
   /* REMOVER */
-  const removeFromCart = (id) => {
-    setCart((prev) => prev.filter((item) => item.id !== id));
+  const removeFromCart = (cartId) => {
+    setCart((prev) => prev.filter((item) => (item.cartId || String(item.id)) !== cartId));
   };
 
   /* LIMPAR */
