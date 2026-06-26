@@ -105,7 +105,7 @@ export const cardapio = [
   {
     categoria: "Combos de Sanduíches",
     produtos: [
-      { id: 39, nome: "Combo 1 de X-Salada", preco: 25, descricao: "2 X-Saladas e um refrigerante Baré de 1 L + batata frita" },
+      { id: 39, nome: "Combo 1 de X-Salada", preco: 25, descricao: "2 X-Saladas e um refrigerante Baré de 1 L" },
       { id: 40, nome: "Combo 2 de X-Salada", preco: 35, descricao: "3 X-Saladas e um refrigerante de 1 L + batata frita" },
       { id: 41, nome: "Combo 3 de X-Salada", preco: 46, descricao: "4 X-Saladas e um refrigerante de 2 L + batata frita" },
       { id: 42, nome: "Combo 4 de X-Salada", preco: 62, descricao: "5 X-Saladas e um refrigerante Coca-Cola de 2 L + batata frita" },
